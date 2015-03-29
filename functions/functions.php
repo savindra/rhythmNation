@@ -3,7 +3,7 @@
 function getPage($dir, $filename, $default = false){
 	
 	$root = $_SERVER['DOCUMENT_ROOT'] . 'WebCwk/';
-	$path = $root . $dir;
+	$path = '../' . $dir;
 	if(is_dir($path)){
 		
 		if(file_exists($path . '/' . $filename . '.php')){
