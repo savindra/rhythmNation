@@ -33,7 +33,7 @@
         		<textarea placeholder="Message here"></textarea>
               </label>
               
-              <a href="#" class="small button radius">Submit</a>
+              <input type="submit" value="Submit" class="small button radius" />
               <a href="#" class="small button radius">Clear</a>
               
             </div>

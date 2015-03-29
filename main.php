@@ -1,5 +1,5 @@
 <?php
-require_once('../functions/functions.php');
+require_once('functions/functions.php');
 ?>
 
 <!doctype html>
@@ -27,28 +27,32 @@ require_once('../functions/functions.php');
 			}else{
 				$pageTitle = '404';
 			}
-			include 'header.php';
+			include 'includes/header.php';
   		?>
     </head>
   
   <body>
   
   	<?php
-			include 'menu.php';
+			include 'includes/menu.php';
   	?>
   
   	<?php
-		
+		$ref = "";
 		if(isset($_GET['ref'])){
 			$ref = $_GET["ref"];
 			if($ref == "savindra" || $ref == "oshada" || $ref == "pumudu" || $ref == "yesin"){
 				getPage('includes/cv', $ref, '404');
-			}else {
+			} else {
 				getPage('includes', $ref, '404');
 			}
 			
 		}else{
-			getPage('includes', '404');
+			if($ref == "" ){
+				getPage('includes', 'home','404');
+			}else{
+				getPage('includes', '404');
+			}
 		}
 	?>
     
@@ -56,7 +60,7 @@ require_once('../functions/functions.php');
     
     <footer>
 	  <?php
-          include 'footer.php';
+          include 'includes/footer.php';
       ?>
     </footer>
     

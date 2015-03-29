@@ -11,9 +11,9 @@
         	<br />
         	<p style="color:#FFF"><b>Links</b></p>
             <ul>
-            	<li><a href="?ref=about">About Us</a></li>
-                <li><a href="?ref=testimonals">Testimonals</a></li>
-                <li><a href="?ref=contact">Contact Us</a></li>
+            	<li><a href="includes/?ref=about">About Us</a></li>
+                <li><a href="includes/?ref=testimonals">Testimonals</a></li>
+                <li><a href="includes/?ref=contact">Contact Us</a></li>
             </ul>
         </div>
         
@@ -29,8 +29,8 @@
 <div class="row">
 <span class="right">@2015 RhythmNation (Pvt)Ltd.</span>
 </div>
-<script src="../js/vendor/jquery.js"></script>
-    <script src="../js/foundation.min.js"></script>
+<script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
     </script>

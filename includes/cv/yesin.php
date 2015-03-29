@@ -14,7 +14,7 @@
       <div class="large-4 columns cvcolumns">
       	<div class="panel" data-equalizer-watch>
       		<br />
-           <img class="displayed ImageBorder" src="../img/yprofile.jpg">
+           <img class="displayed ImageBorder" src="img/yprofile.jpg">
            <br />
            <div class="addressImg">
            	<h6><b>ADDRESS</b></h6>

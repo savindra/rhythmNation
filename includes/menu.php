@@ -5,8 +5,8 @@
       				
                     <section class="top-bar-section">
                       <ul style="padding-top:10px;">
-                          <li><a href="http://facebook.com/rhythmnation"><img src="../img/icon/facebook-top-icon.png"/></a></li>
-                          <li><a href="http://twitter.com/rhythmnation"><img src="../img/icon/top-twitter-icon.png"/></a></li>
+                          <li><a href="http://facebook.com/rhythmnation"><img src="img/icon/facebook-top-icon.png"/></a></li>
+                          <li><a href="http://twitter.com/rhythmnation"><img src="img/icon/top-twitter-icon.png"/></a></li>
                       </ul>
                     </section>
                     
@@ -30,7 +30,7 @@
       <div class="panel menu-panel">
       	<div class="row">
         	<div class="large-3 columns">
-        		<a href="?ref=home"><img class="left" src="../img/logo.png" alt="logo" /></a>
+        		<a href="?ref=home"><img class="left" src="img/logo.png" alt="logo" /></a>
             </div>
             <div class="large-9 columns">
             
@@ -42,7 +42,7 @@
                             
                             <li class="has-dropdown"><a href="#">About Us</a>
                             <ul class="dropdown">
-                    				<li class="has-dropdown"><a href="../cv/savindra.php">Our Team</a>
+                    				<li class="has-dropdown"><a href="cv/savindra.php">Our Team</a>
                                     	<ul class="dropdown">
                                         	<li><a href="?ref=oshada">Oshada</a>
                                             <li><a href="?ref=pumudu">Pumudu</a>
@@ -53,7 +53,7 @@
                     			</ul>
                             </li>
                             
-                            <li class="name"><a href="?ref=testimonals">Testimonals</a></li>
+                            <li class="name"><a href="includes/?ref=testimonals">Testimonals</a></li>
                             
                 			<li class="has-dropdown"><a href="#">Shop</a>
                 				<ul class="dropdown">

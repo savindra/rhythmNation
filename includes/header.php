@@ -2,11 +2,11 @@
     	<meta charset="utf-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     	<title> <?php echo $pageTitle ?> | RhythmNation</title>
-    	<link rel="stylesheet" href="../css/foundation.css" />
-        <link rel="stylesheet" href="../css/foundation-icons.css" />
-        <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    	<link rel="stylesheet" href="css/foundation.css" />
+        <link rel="stylesheet" href="css/foundation-icons.css" />
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,700,600,800,400' rel='stylesheet' type='text/css'>
-    	<script src="../js/vendor/modernizr.js"></script>
+    	<script src="js/vendor/modernizr.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script>
 			function initialize() {
@@ -20,7 +20,7 @@
 			google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
         
-        <style type="text/css">.panel{background:#F5F5F5;} IMG.displayed {display: block;margin-left: auto;margin-right: auto } h2, h3, h4,h6, p, li, body { font-family: 'Open Sans'; } .cvcolumns {padding-left:0.0rem;padding-right:0.0rem;} .panel.callout{background:#FDFDFD;} .addressImg{background:url(../css/svgs/fi-address-book.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} div{display:block;} table tr th, table tr td, li, p{font-size:14px;} .leftHr {height: 2px;color: #ed1d61;background: #0099FF;font-size: 0;border: 0;} .contactImg{background:url(../css/svgs/fi-telephone.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;}  .rightHr {height: 5px;color: #000;background: #000;font-size: 0;border: 0;} .webImg{background:url(../css/svgs/fi-web.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .langImg{background:url(../css/svgs/fi-clipboard-notes.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .linkedInImg{background:url(../css/svgs/fi-social-linkedin.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .ImageBorder{padding:10px;border:medium solid #09F;} header{ 
+        <style type="text/css">.panel{background:#F5F5F5;} IMG.displayed {display: block;margin-left: auto;margin-right: auto } h2, h3, h4,h6, p, li, body { font-family: 'Open Sans'; } .cvcolumns {padding-left:0.0rem;padding-right:0.0rem;} .panel.callout{background:#FDFDFD;} .addressImg{background:url(css/svgs/fi-address-book.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} div{display:block;} table tr th, table tr td, li, p{font-size:14px;} .leftHr {height: 2px;color: #ed1d61;background: #0099FF;font-size: 0;border: 0;} .contactImg{background:url(css/svgs/fi-telephone.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;}  .rightHr {height: 5px;color: #000;background: #000;font-size: 0;border: 0;} .webImg{background:url(css/svgs/fi-web.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .langImg{background:url(css/svgs/fi-clipboard-notes.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .linkedInImg{background:url(css/svgs/fi-social-linkedin.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .ImageBorder{padding:10px;border:medium solid #09F;} header{ 
   display:table;
   text-align:center; 
 }
@@ -34,9 +34,9 @@ header:before, header:after{
 }
 header > h3{ white-space:pre; padding:0 15px; }
 
-.eduImg{background:url(../css/svgs/fi-book.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} 
-.profImg{background:url(../css/svgs/fi-torso-business.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} 
-.skillImg{background:url(../css/svgs/fi-social-skillshare.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;}
+.eduImg{background:url(css/svgs/fi-book.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} 
+.profImg{background:url(css/svgs/fi-torso-business.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} 
+.skillImg{background:url(css/svgs/fi-social-skillshare.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;}
 
 .top-border{border-top-color:#09F;border-top-style:solid; background-color:#333333;}
 .menu-panel{padding: 0.75rem;}

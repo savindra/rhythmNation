@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <meta http-equiv="refresh" content="5;url=?page=main" />
+    <meta http-equiv="refresh" content="5;url=main.php" />
     
     <script>
 	var count = 5;
@@ -72,18 +72,7 @@
         </div>
     </div>
     
-    <?php
-    	if(isset($_GET['page']) && $_GET["page"] == "main") {
-        	if(file_exists("includes/" . $_GET['page'] . '.php')){
-            	ob_start();
-				header("Location: includes/" . $_GET['page'] . '.php?ref=home');
-				ob_end_flush();
-            }else {
-            	echo "404 Page Not Found!";
-            }
-        
-        }
-    ?>
+    
     
 
     
