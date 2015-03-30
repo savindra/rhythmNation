@@ -8,31 +8,30 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,700,600,800,400' rel='stylesheet' type='text/css'>
     	<script src="js/vendor/modernizr.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js"></script>
-        
         <script>
-var myCenter=new google.maps.LatLng(6.90162, 79.86895);
-var marker;
-
-function initialize()
-{
-var mapProp = {
-  center:myCenter,
-  zoom:15,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker=new google.maps.Marker({
-  position:myCenter,
-  animation:google.maps.Animation.BOUNCE
-  });
-
-marker.setMap(map);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+		  var myCenter=new google.maps.LatLng(6.90162, 79.86895);
+		  var marker;
+		  
+		  function initialize()
+		  {
+		  var mapProp = {
+			center:myCenter,
+			zoom:15,
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+			};
+		  
+		  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		  
+		  var marker=new google.maps.Marker({
+			position:myCenter,
+			animation:google.maps.Animation.BOUNCE
+			});
+		  
+		  marker.setMap(map);
+		  }
+		  
+		  google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
         
         <style type="text/css">.panel{background:#F5F5F5;} IMG.displayed {display: block;margin-left: auto;margin-right: auto } h2, h3, h4,h6, p, li, body { font-family: 'Open Sans'; } .cvcolumns {padding-left:0.0rem;padding-right:0.0rem;} .panel.callout{background:#FDFDFD;} .addressImg{background:url(css/svgs/fi-address-book.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} div{display:block;} table tr th, table tr td, li, p{font-size:14px;} .leftHr {height: 2px;color: #ed1d61;background: #0099FF;font-size: 0;border: 0;} .contactImg{background:url(css/svgs/fi-telephone.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;}  .rightHr {height: 5px;color: #000;background: #000;font-size: 0;border: 0;} .webImg{background:url(css/svgs/fi-web.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .langImg{background:url(css/svgs/fi-clipboard-notes.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .linkedInImg{background:url(css/svgs/fi-social-linkedin.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} .ImageBorder{padding:10px;border:medium solid #09F;} header{ 
   display:table;
