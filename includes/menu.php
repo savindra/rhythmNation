@@ -7,7 +7,7 @@
                       <ul style="padding-top:10px;">
                           <li><a href="http://facebook.com/rhythmnation"><img src="img/icon/facebook-top-icon.png"/></a></li>
                           <li><a href="http://twitter.com/rhythmnation"><img src="img/icon/top-twitter-icon.png"/></a></li>
-                      </ul>
+                          <li><a href="http://vimeo.com/rhythmnation"><img src="img/icon/top-vimeo-icon.png"></a></li>                      </ul>
                     </section>
                     
           			<section class="top-bar-section">
@@ -90,7 +90,6 @@
 <br />
 <br />
 <br />
-
 
 
 

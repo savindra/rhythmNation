@@ -1,5 +1,6 @@
-<div class="row">
+<div class="row panel nav-bar">
 	<div>
+    	<h4><b>CONTACT US</b></h4>
     	<ul class="breadcrumbs">
         	<li><a href="?ref=home">Home</a></li>
             <li class="current"><a href="?ref=contact">Contact Us</a></li>

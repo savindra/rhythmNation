@@ -4,6 +4,7 @@
     	<title> <?php echo $pageTitle ?> | RhythmNation</title>
     	<link rel="stylesheet" href="css/foundation.css" />
         <link rel="stylesheet" href="css/foundation-icons.css" />
+        <link rel="stylesheet" href="css/slippry.css" />
         <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,700,600,800,400' rel='stylesheet' type='text/css'>
     	<script src="js/vendor/modernizr.js"></script>
@@ -52,7 +53,10 @@ header > h3{ white-space:pre; padding:0 15px; }
 .skillImg{background:url(css/svgs/fi-social-skillshare.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;}
 
 .top-border{border-top-color:#09F;border-top-style:solid; background-color:#333333;}
-.menu-panel{padding: 0.75rem;}
+.menu-panel{padding: 0.75rem;
+-moz-box-shadow: 0 0 10px #888;
+-webkit-box-shadow: 0 108px#888;
+box-shadow: 0 0 10px #888;}
 
 .secondary-menu{background-color:transparent;}
 
@@ -103,6 +107,23 @@ header > h3{ white-space:pre; padding:0 15px; }
       background-color: #63F;
       background: #FFF;
       color: #000; }
+	  
+.banner { position: relative; overflow: auto;  
+   }
+.banner li { list-style: none;
+min-height: 400px; }
+.banner ul li { float: left; }
+
+.nav-bar{
+	padding:0.4rem;}
 
 </style>
-    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/slippry.min.js"></script>
+        <script>
+		  jQuery(document).ready(function($){
+			$(function(){
+				$('#slippry-demo').slippry()
+			});
+		  });
+</script>
