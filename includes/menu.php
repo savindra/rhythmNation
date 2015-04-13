@@ -17,7 +17,7 @@
                             
                             <li class="name"><a href="?ref=checkout">Checkout</a></li>
                             
-                            <li class="name"><a href="?ref=login">Login/Register</a></li>
+                            <li class="name"><a href="?ref=login-register">Login/Register</a></li>
                             
                 			<li><a href="?ref=cart" class="alert button">Cart</a>
                 			</li>

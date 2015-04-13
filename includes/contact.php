@@ -1,5 +1,5 @@
-<div class="row panel nav-bar">
-	<div>
+<div class="row">
+	<div class="large-12">
     	<h4><b>CONTACT US</b></h4>
     	<ul class="breadcrumbs">
         	<li><a href="?ref=home">Home</a></li>
