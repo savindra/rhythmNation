@@ -1,3 +1,22 @@
+<?php
+require_once('functions/functions.php');
+?>
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    	<?php
+			$pageTitle = "Login / Register";
+			include 'includes/header.php';
+  		?>
+</head>
+ 
+<body>   
+  <?php
+			include 'includes/menu.php';
+  	?>
+      
 <div class="row large-12">
 	<div>
     	<h4><b>LOGIN / REGISTER</b></h4>
@@ -11,8 +30,8 @@
 
 <div class="row">
 	<div class="large-6 columns">
-    	<h3>Login</h3>
-        <div class="panel">
+    	<h4>Login</h4>
+        <div class="panel callout">
           <form>
           	<div class="row">
             	<div class="large-12 columns">
@@ -33,9 +52,18 @@
     </div>
     
     <div class="large-6 columns">
-    	<h3>Register</h3>
-        <div class="panel">
+    	<h4>Register</h4>
+        <div class="panel callout">
         das
         </div>
     </div>
 </div>
+
+ <footer>
+	  <?php
+          include 'includes/footer.php';
+      ?>
+    </footer>
+    
+  </body>
+</html>

@@ -1,3 +1,22 @@
+<?php
+require_once('functions/functions.php');
+?>
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    	<?php
+			$pageTitle = "Contact Us";
+			include 'includes/header.php';
+  		?>
+</head>
+ 
+<body>   
+  <?php
+			include 'includes/menu.php';
+  	?>
+    
 <div class="row">
 	<div class="large-12">
     	<h4><b>CONTACT US</b></h4>
@@ -55,3 +74,12 @@
 
 
 </div>
+
+ <footer>
+	  <?php
+          include 'includes/footer.php';
+      ?>
+    </footer>
+    
+  </body>
+</html>

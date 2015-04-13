@@ -17,7 +17,7 @@
                             
                             <li class="name"><a href="?ref=checkout">Checkout</a></li>
                             
-                            <li class="name"><a href="?ref=login-register">Login/Register</a></li>
+                            <li class="name"><a href="login-register.php">Login/Register</a></li>
                             
                 			<li><a href="?ref=cart" class="alert button">Cart</a>
                 			</li>
@@ -30,7 +30,7 @@
       <div class="panel menu-panel">
       	<div class="row">
         	<div class="large-3 columns">
-        		<a href="?ref=home"><img class="left" src="img/logo.png" alt="logo" /></a>
+        		<a href="main.php?ref=home"><img class="left" src="img/logo.png" alt="logo" /></a>
             </div>
             <div class="large-9 columns">
             
@@ -44,10 +44,10 @@
                             <ul class="dropdown">
                     				<li class="has-dropdown"><a href="cv/savindra.php">Our Team</a>
                                     	<ul class="dropdown">
-                                        	<li><a href="?ref=oshada">Oshada</a>
-                                            <li><a href="?ref=pumudu">Pumudu</a>
-                                        	<li><a href="?ref=savindra">Savindra</a>
-                                            <li><a href="?ref=yesin">Yesin</a>
+                                        	<li><a href="main.php?ref=oshada">Oshada</a>
+                                            <li><a href="main.php?ref=pumudu">Pumudu</a>
+                                        	<li><a href="main.php?ref=savindra">Savindra</a>
+                                            <li><a href="main.php?ref=yesin">Yesin</a>
                                         </ul>
                                     </li>
                     			</ul>
@@ -67,11 +67,11 @@
                 				<ul class="dropdown">
                     				<li><a href="?ref=quiz">Take Quiz</a></li>
                                     <li><a href="?ref=poll">Weekly Poll</a></li>
-                                    <li><a href="?ref=rate">Rate Us!</a></li>
+                                    <li><a href="rate-us.php">Rate Us!</a></li>
                     			</ul>
                 			</li>
                             
-                            <li class="name"><a href="?ref=contact">Contact Us</a></li>
+                            <li class="name"><a href="contact.php">Contact Us</a></li>
                             
                             
                             
