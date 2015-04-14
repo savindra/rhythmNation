@@ -53,7 +53,7 @@
                     			</ul>
                             </li>
                             
-                            <li class="name"><a href="includes/?ref=testimonals">Testimonals</a></li>
+                            <li class="name"><a href="testimonals.php">Testimonals</a></li>
                             
                 			<li class="has-dropdown"><a href="#">Shop</a>
                 				<ul class="dropdown">
