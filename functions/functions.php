@@ -35,5 +35,9 @@ function getPage($dir, $filename, $default = false){
 	return false;
 	
 }
+//================
+//Form Handling
+//================
+
 
 ?>

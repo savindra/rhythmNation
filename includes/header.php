@@ -9,6 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,700,600,800,400' rel='stylesheet' type='text/css'>
     	<script src="js/vendor/modernizr.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script src="js/validate.js"></script>
         <script>
 		  var myCenter=new google.maps.LatLng(6.90162, 79.86895);
 		  var marker;
@@ -116,6 +117,10 @@ min-height: 400px; }
 
 .nav-bar{
 	padding:0.4rem;}
+	
+.testimonals{
+	background-color:#09F;
+	color:#FFF;}
 
 </style>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

@@ -38,7 +38,7 @@
           			<section class="top-bar-section top-bar-section2">
           				<ul class="right">
             				
-                            <li class="name"><a href="?ref=home">Home</a></li>
+                            <li class="name"><a href="main.php?ref=home">Home</a></li>
                             
                             <li class="has-dropdown"><a href="#">About Us</a>
                             <ul class="dropdown">
@@ -55,11 +55,11 @@
                             
                             <li class="name"><a href="testimonals.php">Testimonals</a></li>
                             
-                			<li class="has-dropdown"><a href="#">Shop</a>
+                			<li class="has-dropdown"><a href="shop.php">Shop</a>
                 				<ul class="dropdown">
-                    				<li><a href="?ref=shop-guitars">Guitars</a></li>
-                                    <li><a href="?ref=shop-drumsets">Drum Sets</a></li>
-                                    <li><a href="?ref=shop-keyboards">Keyboards</a></li>
+                    				<li><a href="shop.php?ref=guitars">Guitars</a></li>
+                                    <li><a href="shop.php?ref=drumsets">Drum Sets</a></li>
+                                    <li><a href="shop.php?ref=keyboards">Keyboards</a></li>
                     			</ul>
                 			</li>
                             
