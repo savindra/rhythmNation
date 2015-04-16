@@ -1,7 +1,9 @@
 <?php
 require_once('functions/functions.php');
 ?>
-
+<?php
+	include('functions/login.php');
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -28,19 +30,15 @@ require_once('functions/functions.php');
 
 </div>
 
-<?php
-	require_once('functions/db_connect.php');
-?>
-
 <div class="row">
 	<div class="large-6 columns">
     	<h4>Login</h4>
         <div class="panel callout">
-          <form>
+          <form action="" method="post">
           	<div class="row">
             	<div class="large-12 columns">
-                	<label>Username or Email <span style="color:#F00">*</span>
-                    	<input name="username-email" type="text" placeholder="Username/Email" required>
+                	<label>Username <span style="color:#F00">*</span>
+                    	<input name="username" type="text" placeholder="Username" required>
                     </label>
                     <label>Password <span style="color:#F00">*</span>
                     	<input name="password" type="password" placeholder="Password" required>
@@ -49,6 +47,7 @@ require_once('functions/functions.php');
                     	<input type="checkbox" value="true"><b> Remember me</b>
                     </label>
                     <input type="submit" name="login-submit" value="Login" class="small button radius" />
+             		<span><?php echo $error; ?></span>
                 </div>
             </div>
           </form>
@@ -60,7 +59,10 @@ require_once('functions/functions.php');
     	<h4>Register</h4>
         <p>New Customer? Register here.</p>
         <div class="panel callout">
-        <form>
+        <?php
+			include('functions/register.php');
+		?>
+        <form action="" method="post">
         	<div class="row">
             	<div class="large-6 columns">
                 	<label>First Name
@@ -70,10 +72,13 @@ require_once('functions/functions.php');
                     	<input type="text" name="l-name" placeholder="Last Name" required>
                     </label>
                     <label>Company Name
-                    	<input type="text" name="company-name" placeholder="Company Name" required>
+                    	<input type="text" name="company-name" placeholder="Company Name">
                     </label>
                     <label>Email Address
                     	<input type="email" name="email" placeholder="Email" required>
+                    </label>
+                    <label>Username
+                    	<input type="text" name="username" placeholder="Username" required>
                     </label>
                     <label>Password
                     	<input type="password" name="password" placeholder="Password" required>
@@ -105,7 +110,7 @@ require_once('functions/functions.php');
 								
 								if($response){
 									while($row = mysqli_fetch_array($response)){
-										echo '<option value="' . $row['name'] . '">' . $row['name'] . '</option>';
+										echo '<option value="' . $row['country_id'] . '">' . $row['name'] . '</option>';
 									}
 								} else {
 									echo "Couldn't issue database query";
@@ -122,6 +127,8 @@ require_once('functions/functions.php');
                 </div>
             </div>
              <input type="submit" name="register-submit" value="Register" class="small button radius" />
+             <br/>
+             <span><?php echo $result; ?></span>
         </form>
         </div>
     </div>
