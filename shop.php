@@ -46,13 +46,92 @@ require_once('functions/functions.php');
     
     <div class="tabs-content">
       <div class="content <?php if($category == "" || $category == "guitars"){echo "active";}?>" id="panel11">
-        <p>This is the first panel of the basic tab example. You can place all sorts of content here including a grid.</p>
+        <?php
+			require_once('functions/db_connect.php');
+			
+			$query = "SELECT * FROM product WHERE category_id=1";
+			
+			$response = @mysqli_query($dbc, $query);
+			$count = 0;
+			if($response){
+                  while($row = mysqli_fetch_array($response)){
+                      echo  '<div class="large-3 columns">
+					  <a href="shop-item.php?pid=' . $row['product_id'] . '"><img src="' . $row['image'] . '"></a><br/><br/>
+					  <a href="shop-item.php?pid=' . $row['product_id'] . '"><p class="text-center"><b>' . $row['model'] . '</b></p></a>
+					  <p class="text-center">$' . $row['price'] . '</p>
+					  <form>
+					  	<div class="text-center">
+					  		<input type="submit" name="add-to-cart" value="ADD TO CART" class="tiny button radius">
+						</div>
+					  </form>
+					  </div>';
+                  }
+              } else {
+                  echo "Couldn't issue database query";
+                  echo mysqli_error($dbc);
+                  
+              }
+		?>
       </div>
       <div class="content <?php if($category == "drumsets"){echo "active";}?>" id="panel21">
-        <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+        
+        <?php
+			require_once('functions/db_connect.php');
+			
+			$query = "SELECT * FROM product WHERE category_id=2";
+			
+			$response = @mysqli_query($dbc, $query);
+			$count = 0;
+			if($response){
+                  while($row = mysqli_fetch_array($response)){
+                      echo  '<div class="large-3 columns">
+					  <a href="shop-item.php?pid=' . $row['product_id'] . '"><img src="' . $row['image'] . '"></a><br/><br/>
+					  <a href="shop-item.php?pid=' . $row['product_id'] . '"><p class="text-center"><b>' . $row['model'] . '</b></p></a>
+					  <p class="text-center">$' . $row['price'] . '</p>
+					  <form>
+					  	<div class="text-center">
+					  		<input type="submit" name="add-to-cart" value="ADD TO CART" class="tiny button radius">
+						</div>
+					  </form>
+					  </div>';
+                  }
+              } else {
+                  echo "Couldn't issue database query";
+                  echo mysqli_error($dbc);
+                  
+              }
+		?>
+        
       </div>
       <div class="content <?php if($category == "keyboards"){echo "active";}?>" id="panel31">
-        <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
+        
+        <?php
+			require_once('functions/db_connect.php');
+			
+			$query = "SELECT * FROM product WHERE category_id=3";
+			
+			$response = @mysqli_query($dbc, $query);
+			$count = 0;
+			if($response){
+                  while($row = mysqli_fetch_array($response)){
+                      echo  '<div class="large-3 columns">
+					  <a href="shop-item.php?pid=' . $row['product_id'] . '"><img src="' . $row['image'] . '"></a><br/><br/>
+					  <a href="shop-item.php?pid=' . $row['product_id'] . '"><p class="text-center"><b>' . $row['model'] . '</b></p></a>
+					  <p class="text-center">$' . $row['price'] . '</p>
+					  <form>
+					  	<div class="text-center">
+					  		<input type="submit" name="add-to-cart" value="ADD TO CART" class="tiny button radius">
+						</div>
+					  </form>
+					  </div>';
+                  }
+              } else {
+                  echo "Couldn't issue database query";
+                  echo mysqli_error($dbc);
+                  
+              }
+		?>
+        
       </div>
 	</div>
 
