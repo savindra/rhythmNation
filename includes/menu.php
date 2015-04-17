@@ -13,7 +13,7 @@
           			<section class="top-bar-section">
           				<ul class="right">
             				
-                            <li class="name"><a href="?ref=account">My Account</a></li>
+                            <li class="name"><a href="myaccount.php">My Account</a></li>
                             
                             <li class="name"><a href="?ref=checkout">Checkout</a></li>
                             

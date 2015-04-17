@@ -45,7 +45,7 @@ require_once('functions/functions.php');
     
 <div class="row">
 	<div class="large-12">
-    	<h4><b>CONTACT US</b></h4>
+    	<h4><b><?php echo $pageTitle; ?></b></h4>
     	<ul class="breadcrumbs">
         	<li><a href="?ref=home">Home</a></li>
             <li><a href="shop.php">Shop</a></li>
@@ -68,10 +68,10 @@ require_once('functions/functions.php');
         <hr>
         <p><?php echo $prod_desc; ?></p>
         <p><b><?php echo $quantity; ?> IN STOCK</b></p>
-        <form>
+        <form action="" method="post">
         	<div class="large-4 large-offset-8 columns text-right">
             	<label>
-                	<input type="text" name="quantity">
+                	<input type="number" name="quantity" value="1" min="1" max="<?php echo $quantity; ?>">
                     <input type="submit" name="add-to-cart" value="Add to cart" class="small button radius">
                 </label>
             </div>

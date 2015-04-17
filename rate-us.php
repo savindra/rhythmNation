@@ -43,7 +43,7 @@ require_once('functions/functions.php');
 		  
 		  $stmt = mysqli_prepare($dbc, $query);
 		  
-		  mysqli_stmt_bind_param($stmt, "sssd", $name, $email, $comment, $rating);
+		  mysqli_stmt_bind_param($stmt, "sssd", $email, $name, $comment, $rating);
 		  
 		  mysqli_stmt_execute($stmt);
 		  

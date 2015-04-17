@@ -5,7 +5,7 @@ session_start();
 
 $user_check = $_SESSION['login_user'];
 
-$query = "SELECT username FROM customer WHERE username='$user_check'";
+$query = "SELECT * FROM customer WHERE username='$user_check'";
 
 $response = @mysqli_query($dbc, $query);
 
@@ -15,7 +15,7 @@ $login_session = $row['username'];
 
 if(!isset($login_session)){
 	mysqli_close($dbc);
-	header('Location: index.php');
+	header('Location: login-register.php');
 }
 
 ?>

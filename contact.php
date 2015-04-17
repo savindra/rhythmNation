@@ -21,8 +21,8 @@ require_once('functions/functions.php');
 	<div class="large-12">
     	<h4><b>CONTACT US</b></h4>
     	<ul class="breadcrumbs">
-        	<li><a href="?ref=home">Home</a></li>
-            <li class="current"><a href="?ref=contact">Contact Us</a></li>
+        	<li><a href="main.php?ref=home">Home</a></li>
+            <li class="current"><a href="contact.php">Contact Us</a></li>
         </ul>
     </div>
 
