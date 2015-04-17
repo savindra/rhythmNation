@@ -68,8 +68,7 @@ require_once('functions/functions.php');
                   }
               } else {
                   echo "Couldn't issue database query";
-                  echo mysqli_error($dbc);
-                  
+                  echo mysqli_error($dbc); 
               }
 		?>
       </div>
@@ -97,8 +96,7 @@ require_once('functions/functions.php');
                   }
               } else {
                   echo "Couldn't issue database query";
-                  echo mysqli_error($dbc);
-                  
+                  echo mysqli_error($dbc);   
               }
 		?>
         
@@ -130,6 +128,7 @@ require_once('functions/functions.php');
                   echo mysqli_error($dbc);
                   
               }
+			  mysqli_close($dbc);
 		?>
         
       </div>
