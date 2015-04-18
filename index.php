@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <meta http-equiv="refresh" content="5;url=main.php" />
+    <meta http-equiv="refresh" content="5;url=main.php?ref=home" />
     
     <script>
 	var count = 5;

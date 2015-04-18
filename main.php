@@ -25,7 +25,7 @@ require_once('functions/functions.php');
 				  $pageTitle = '404';
 			  }
 			}else{
-				$pageTitle = '404';
+				$pageTitle = 'Home';
 			}
 			include 'includes/header.php';
   		?>

@@ -16,7 +16,6 @@ require_once('functions/functions.php');
 <body>   
   <?php
 			include 'includes/menu.php';
-			echo $login_session; 
   	?>   
 <div class="row">
 	<div class="large-12">
@@ -34,7 +33,6 @@ require_once('functions/functions.php');
           <li class="tab-title active"><a href="#panel11">Personal Information</a></li>
           <li class="tab-title"><a href="#panel21">Payment Information</a></li>
           <li class="tab-title"><a href="#panel31">Track Item</a></li>
-          <li class="tab-title"><a href="#panel41">Tab 4</a></li>
         </ul>
         <div class="tabs-content">
           <div class="content active" id="panel11">
@@ -102,13 +100,14 @@ require_once('functions/functions.php');
 					$query = "SELECT * FROM payment WHERE customer_id='$customer_id'";
 					$response = @mysqli_query($dbc, $query);
 					
-					$paymentfname = $paymentlname = $paymentaddr1 = $paymentaddr2 = $paymentcity = $paymentpostcode = $cardno = $expdate = "";
+					$paymentfname = $paymentlname = $paymentcompany = $paymentaddr1 = $paymentaddr2 = $paymentcity = $paymentpostcode = $cardno = $expdate = "";
 					if(mysqli_num_rows($response)){
 						$row = mysqli_fetch_array($response);
 						$paymentfname = $row['payment_firstname'];
 						$paymentlname = $row['payment_lastname'];
+						$paymentcompany = $row['payment_company'];
 						$paymentaddr1 = $row['payment_address1'];
-						$paymentaddr22 = $row['payment_address2'];
+						$paymentaddr2 = $row['payment_address2'];
 						$paymentcity = $row['payment_city'];
 						$paymentpostcode = $row['payment_postcode'];
 						$cardno = $row['card_no'];
@@ -119,6 +118,7 @@ require_once('functions/functions.php');
 						
 						$paymentfname = test_input($_POST['payment-firstname']);
 						$paymentlname = test_input($_POST['payment-lastname']);
+						$paymentcompany = test_input($_POST['payment-company']);
 						$paymentaddr1 = test_input($_POST['payment-address1']);
 						$paymentaddr2 = test_input($_POST['payment-address2']);
 						$paymentcity = test_input($_POST['payment-city']);
@@ -132,9 +132,11 @@ require_once('functions/functions.php');
 						$response = @mysqli_query($dbc, $query);
 						
 						if(mysqli_num_rows($response)){
-							
+							$query = "UPDATE payment SET payment_firstname='$paymentfname', payment_lastname='$paymentlname', payment_company='$paymentcompany', payment_address1='$paymentaddr1', payment_address2='$paymentaddr2', payment_city='$paymentcity', payment_postcode='$paymentpostcode', payment_country='$paymentcountry', card_no='$cardno', expiration_date='$expdate' WHERE customer_id='$customer_id'";
+						} else {
+							$query = "INSERT INTO payment VALUES(NULL, '$customer_id', '$paymentfname', '$paymentlname', '$paymentcompany', '$paymentaddr1', '$paymentaddr2', '$paymentcity', '$paymentpostcode', '$paymentcountry', '$cardno', '$expdate')";
 						}
-						
+						$dbc->query($query);
 						
 					}
 					
@@ -149,22 +151,25 @@ require_once('functions/functions.php');
     
                 	<form action="" method="post">
                     	<label>Payment Firstname
-                        	<input type="text" name="payment-firstname" value="<?php echo $paymentfname; ?>">
+                        	<input type="text" name="payment-firstname" value="<?php echo $paymentfname; ?>" required>
                         </label>
                         <label>Payment Lastname
-                        	<input type="text" name="payment-lastname" value="<?php echo $paymentlname; ?>">
+                        	<input type="text" name="payment-lastname" value="<?php echo $paymentlname; ?>" required>
+                        </label>
+                        <label>Payment Company
+                        	<input type="text" name="payment-company" value="<?php echo $paymentcompany; ?>">
                         </label>
                         <label>Payment Address1
-                        	<input type="text" name="payment-address1" value="<?php echo $paymentaddr1; ?>">
+                        	<input type="text" name="payment-address1" value="<?php echo $paymentaddr1; ?>" required>
                         </label>
                         <label>Payment Address2
                         	<input type="text" name="payment-address2" value="<?php echo $paymentaddr2; ?>">
                         </label>
                         <label>Payment City
-                        	<input type="text" name="payment-city" value="<?php echo $paymentcity; ?>">
+                        	<input type="text" name="payment-city" value="<?php echo $paymentcity; ?>" required>
                         </label>
                         <label>Payment Postcode
-                        	<input type="text" name="payment-postcode" value="<?php echo $paymentpostcode; ?>">
+                        	<input type="text" name="payment-postcode" value="<?php echo $paymentpostcode; ?>" required>
                         </label>
                         <label>Payment Country
                           <select name="country">
@@ -186,10 +191,10 @@ require_once('functions/functions.php');
                           </select>
                         </label>
                         <label>Card No
-                        	<input type="text" name="card-no" value="<?php echo $cardno; ?>">
+                        	<input type="number" name="card-no" value="<?php echo $cardno; ?>" required>
                         </label>
                         <label>Expiration Date
-                        	<input type="date" name="expiration-date" value="<?php echo $expdate; ?>">
+                        	<input type="date" name="expiration-date" value="<?php echo $expdate; ?>" required>
                         </label>
                         <input type="submit" name="add-edit" value="Add/Edit" class="small button radius" /> 
                     </form>
@@ -197,10 +202,17 @@ require_once('functions/functions.php');
             </div>
           </div>
           <div class="content" id="panel31">
-            <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
-          </div>
-          <div class="content" id="panel41">
-            <p>This is the fourth panel of the basic tab example. This is the fourth panel of the basic tab example.</p>
+            <div class="large-3">
+              <form>
+                <label>Order ID
+                  <input type="number" name="order-id" required>
+                </label>
+                <label>
+                    <input type="submit" name="order-submit" value="Search" class="small button radius">
+                    <a href="#">View All</a>
+                </label>
+              </form>
+            </div>
           </div>
         </div>
     </div>

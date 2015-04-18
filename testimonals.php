@@ -42,8 +42,8 @@ require_once('functions/functions.php');
               if($response){
                   while($row = mysqli_fetch_array($response)){
                       echo  '<li data-orbit-slide="headline-' .++$count. '">' .
-					  '<div class="text-center"> <p>' . $row['comment'] . '</p> <hr> <p>' . $row['name'] . 
-					  '<br />' . $row['rating'] . ' out of 5 rating. </p> </div> </li>';
+					  '<div class="text-center"> <h4>" ' . $row['comment'] . ' "</h4> <hr> <p>' . $row['name'] . 
+					  '<br />' . $row['rating'] . ' out of 5 rating. </p></div> </li>';
                   }
               } else {
                   echo "Couldn't issue database query";
@@ -53,7 +53,9 @@ require_once('functions/functions.php');
               mysqli_close($dbc);
       ?>
       </ul>
+      
     </div>
+    <p class="text-right">Leave us some feedback <a href="rate-us.php">here</a></p>
 	</div>
 	
 

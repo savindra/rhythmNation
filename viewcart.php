@@ -76,8 +76,18 @@ require_once('functions/functions.php');
 			echo '</tr>';
 			echo '</table>';
 			echo '<a href="functions/cart_update.php?emptycart=1&return_url='.$current_url.'">Empty Cart</a>';
+			
+			echo '<form action="functions/checkout.php" method="post">';
+				echo '<div class="large-12 text-right">';
+				echo '<input type="submit" name="continue-shopping" value="Continue Shopping" class="small button radius">&nbsp;';
+				echo '<input type="submit" name="checkout-submit" value="Checkout" class="small button radius">';
+				echo '</div>';
+			echo '</form>';
+			
 		} else {
-			echo '<p>Your Cart is Empty.</p>';
+			echo '<div style="height:500px" class="large-12">';
+			echo '<p><strong>Your Cart is Empty.</strong></p>';
+			echo '</div>';
 		}
 		
 		
