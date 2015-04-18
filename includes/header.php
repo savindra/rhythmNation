@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
     	<meta charset="utf-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     	<title> <?php echo $pageTitle ?> | RhythmNation</title>
@@ -52,6 +52,7 @@ header > h3{ white-space:pre; padding:0 15px; }
 .eduImg{background:url(css/svgs/fi-book.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} 
 .profImg{background:url(css/svgs/fi-torso-business.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;} 
 .skillImg{background:url(css/svgs/fi-social-skillshare.svg) no-repeat 0 0; background-size:2.5rem 2.5rem;padding-left: 4rem;}
+.cartitem{padding-right: 1rem;}
 
 .top-border{border-top-color:#09F;border-top-style:solid; background-color:#333333;}
 .menu-panel{padding: 0.75rem;

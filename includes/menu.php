@@ -18,8 +18,15 @@
                             <li class="name"><a href="?ref=checkout">Checkout</a></li>
                             
                             <li class="name"><a href="login-register.php">Login/Register</a></li>
-                            
-                			<li><a href="?ref=cart" class="alert button">Cart</a>
+                            <?php
+								$totalQty = 0;
+								if(isset($_SESSION['products'])){
+									foreach($_SESSION['products'] as $cart_itm){
+										$totalQty += $cart_itm['qty'];
+									}
+								}
+							?>
+                			<li><a href="viewcart.php" class="alert button">Cart (<?php echo $totalQty; ?>)</a>
                 			</li>
             			</ul>
           			</section>

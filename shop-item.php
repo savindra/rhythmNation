@@ -14,7 +14,7 @@ require_once('functions/functions.php');
 			} else {
 				header("location: shop.php");
 			}
-			
+			$current_url = base64_encode("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 			require_once('functions/db_connect.php');
 			
 			$query = "SELECT * FROM product WHERE product_id='$pid'";
@@ -68,11 +68,14 @@ require_once('functions/functions.php');
         <hr>
         <p><?php echo $prod_desc; ?></p>
         <p><b><?php echo $quantity; ?> IN STOCK</b></p>
-        <form action="" method="post">
+        <form action="functions/cart_update.php" method="post">
         	<div class="large-4 large-offset-8 columns text-right">
             	<label>
                 	<input type="number" name="quantity" value="1" min="1" max="<?php echo $quantity; ?>">
-                    <input type="submit" name="add-to-cart" value="Add to cart" class="small button radius">
+                    <button class="small button radius">Add to cart</button>
+                    <input type="hidden" name="product_id" value="<?php echo $pid; ?>">
+                    <input type="hidden" name="type" value="add">
+                    <input type="hidden" name="return_url" value="<?php echo $current_url; ?>" />
                 </label>
             </div>
         </form>
