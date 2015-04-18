@@ -203,6 +203,18 @@ require_once('functions/functions.php');
           </div>
           <div class="content" id="panel31">
             <div class="large-3">
+            
+            <?php
+			
+				if(isset($_POST['order-submit'])){
+					
+					$order_id = test_input($_POST['order-id']);
+					
+					
+					
+				}
+			
+			?>
               <form>
                 <label>Order ID
                   <input type="number" name="order-id" required>

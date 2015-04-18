@@ -50,7 +50,7 @@ require_once('functions/functions.php');
 				echo '<tr>';
 					echo '<td class="text-left">';
 							echo '<img class="cartitem" width="75" height="75" align="left" src="' . $obj->image . '">';
-							echo '<b>'.$obj->model.'</b>' . '<br/>';
+							echo '<b><a href="shop-item.php?pid='.$pid.'">'.$obj->model.'</a></b>' . '<br/>';
 							echo "Qty: " . $cart_itm['qty'];
 					echo '</td>';
 				
