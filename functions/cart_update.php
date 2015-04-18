@@ -5,7 +5,7 @@ require_once('db_connect.php');
 
 if(isset($_GET['emptycart']) && $_GET['emptycart'] == 1){
 	$return_url = base64_decode($_GET["return_url"]); //return url
-    session_destroy();
+    unset($_SESSION['products']);
     header('Location:'.$return_url);
 }
 
