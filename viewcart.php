@@ -75,7 +75,7 @@ require_once('functions/functions.php');
 				echo '</td>';
 			echo '</tr>';
 			echo '</table>';
-		
+			echo '<a href="functions/cart_update.php?emptycart=1&return_url='.$current_url.'">Empty Cart</a>';
 		} else {
 			echo '<p>Your Cart is Empty.</p>';
 		}
@@ -83,7 +83,6 @@ require_once('functions/functions.php');
 		
 	?>
     
-    <a href="functions/cart_update.php?emptycart=1&return_url=<?php echo $current_url ?>">Empty Cart</a>
     
     
     </div>

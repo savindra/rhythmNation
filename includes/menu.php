@@ -15,9 +15,19 @@
             				
                             <li class="name"><a href="myaccount.php">My Account</a></li>
                             
-                            <li class="name"><a href="?ref=checkout">Checkout</a></li>
+                            <li class="name"><a href="viewcart.php">Checkout</a></li>
                             
-                            <li class="name"><a href="login-register.php">Login/Register</a></li>
+                            <?php
+								if(isset($_SESSION['login_user'])){
+									$text = "Logout";
+									$target = "functions/logout.php";
+								} else {
+									$text = "Login/Register";
+									$target = "login-register.php";
+								}
+							?>
+                            
+                            <li class="name"><a href="<?php echo $target; ?>"><?php echo $text; ?></a></li>
                             <?php
 								$totalQty = 0;
 								if(isset($_SESSION['products'])){
