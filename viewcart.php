@@ -1,7 +1,4 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
-	session_start(); 
-}
 require_once('functions/functions.php');
 ?>
 
@@ -80,13 +77,6 @@ require_once('functions/functions.php');
 			echo '</table>';
 			echo '<a href="functions/cart_update.php?emptycart=1&return_url='.$current_url.'">Empty Cart</a>';
 			
-			
-			
-			
-			
-			
-			
-			
 			echo '<form action="" method="post">';
 				echo '<div class="large-12 text-right">';
 				echo '<input type="submit"  name="continue-shopping" value="Continue Shopping" class="small button radius">&nbsp;';
@@ -112,8 +102,6 @@ require_once('functions/functions.php');
 		if(isset($_SESSION['login_user']) && isset($_SESSION['products']) && isset($_POST['checkout-submit'])){
 			
 			$loginuser = $_SESSION['login_user'];
-			$resultitle = "";
-			$result = "";
 			
 			$result = $dbc->query("SELECT * FROM customer WHERE username='$loginuser'");
 			$obj = $result->fetch_object();
@@ -189,28 +177,25 @@ require_once('functions/functions.php');
 						$dbc->query($query);
 						
 						unset($_SESSION['products']);
-						$resultitle = "Order Success.";
-						$result = "Order Completed.";
+						
+						$_SESSION['attempt_checkout'] = "success";
+						$_SESSION['order_id'] = $order_id;
+						header("location: checkout.php");
 					}
-					$resultitle = "Order Failed.";
-					$result = "Invalid quantity for ".$invalidProduct;
+				} else {
+					$_SESSION['attempt_checkout'] = "invalid_qty";
+					$_SESSION['invalid_products'] = $invalidProduct;	
+					header("location: checkout.php");
 				}
-				
-				
+					
 			} else {
-				$resultitle = "Order Failed.";
-				$result = "Please add payment details to your account before proceeding.";	
+				$_SESSION['attempt_checkout'] = "no_payment";	
+				header("location: checkout.php");
 			}
-			//header("location: viewcart.php");
-			echo '<p>'.$result.'</p>';
 		}
 		
 		if(!isset($_SESSION['login_user']) && isset($_SESSION['products']) && isset($_POST['checkout-submit'])){
 			header("location: login-register.php");
-		}
-		
-		if(isset($_SESSION['login_user']) && !isset($_SESSION['products']) && isset($_POST['checkout-submit'])){
-			header("location: viewcart.php");
 		}
 		
 	?>

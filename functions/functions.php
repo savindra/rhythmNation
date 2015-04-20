@@ -1,5 +1,7 @@
 <?php
-
+if(session_status() == PHP_SESSION_NONE){
+	session_start(); 
+}
 function getPage($dir, $filename, $default = false){
 	
 	$root = $_SERVER['DOCUMENT_ROOT'] . 'WebCwk/';

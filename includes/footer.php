@@ -13,8 +13,9 @@
         	<p style="color:#FFF"><b>Links</b></p>
             <ul>
             	<li><a href="includes/?ref=about">About Us</a></li>
-                <li><a href="includes/?ref=testimonals">Testimonals</a></li>
-                <li><a href="includes/?ref=contact">Contact Us</a></li>
+                <li><a href="main.php?ref=tos">Terms of Service</a></li>
+                <li><a href="testimonals.php">Testimonals</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
             </ul>
         </div>
         

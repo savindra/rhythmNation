@@ -1,7 +1,4 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
-	session_start(); 
-}
 require_once('functions/functions.php');
 ?>
 
@@ -23,7 +20,13 @@ require_once('functions/functions.php');
 			  }else if($ref == "yesin") {
 				  $pageTitle = 'Yesin CV';
 			  }else if($ref == "contact") {
-				  $pageTitle = 'Contact Us';	  
+				  $pageTitle = 'Contact Us';
+			  }else if($ref == "tos") {
+				  $pageTitle = 'Terms of Service';  
+			  }else if($ref == "privacy-policy") {
+				  $pageTitle = 'Privacy Policy';
+			  }else if($ref == "about-us") {
+				  $pageTitle = 'About Us';	  
 			  }else{
 				  $pageTitle = '404';
 			  }
@@ -46,6 +49,9 @@ require_once('functions/functions.php');
 			$ref = $_GET["ref"];
 			if($ref == "savindra" || $ref == "oshada" || $ref == "pumudu" || $ref == "yesin"){
 				getPage('includes/cv', $ref, '404');
+			}
+			else if($ref == "tos" || $ref == "privacy-policy" || $ref == "about-us"){
+				getPage('includes/pages', $ref, '404');
 			} else {
 				getPage('includes', $ref, '404');
 			}

@@ -57,9 +57,9 @@
             				
                             <li class="name"><a href="main.php?ref=home">Home</a></li>
                             
-                            <li class="has-dropdown"><a href="#">About Us</a>
+                            <li class="has-dropdown"><a href="main.php?ref=about-us">About Us</a>
                             <ul class="dropdown">
-                    				<li class="has-dropdown"><a href="cv/savindra.php">Our Team</a>
+                    				<li class="has-dropdown"><a href="#">Our Team</a>
                                     	<ul class="dropdown">
                                         	<li><a href="main.php?ref=oshada">Oshada</a>
                                             <li><a href="main.php?ref=pumudu">Pumudu</a>
@@ -75,7 +75,7 @@
                 			<li class="has-dropdown"><a href="shop.php">Shop</a>
                 				<ul class="dropdown">
                     				<li><a href="shop.php?ref=guitars">Guitars</a></li>
-                                    <li><a href="shop.php?ref=drumsets">Drum Sets</a></li>
+                                    <li><a href="shop.php?ref=drum-sets">Drum Sets</a></li>
                                     <li><a href="shop.php?ref=keyboards">Keyboards</a></li>
                     			</ul>
                 			</li>

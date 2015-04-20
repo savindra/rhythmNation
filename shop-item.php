@@ -1,7 +1,4 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
-	session_start(); 
-}
 require_once('functions/functions.php');
 ?>
 
@@ -27,6 +24,7 @@ require_once('functions/functions.php');
 			if($response){
                   while($row = mysqli_fetch_array($response)){
                       $pageTitle = $row['model'];
+					  $category_id = $row['category_id'];
 					  $image = $row['image'];
 					  $price = $row['price'];
 					  $prod_desc = $row['product_desc'];
@@ -37,6 +35,10 @@ require_once('functions/functions.php');
                   echo mysqli_error($dbc);
                   
 			 }
+			 $result = $dbc->query("SELECT category_desc FROM category WHERE category_id='$category_id'");
+			 $obj = $result->fetch_object();
+			 $category = $obj->category_desc; 
+			 
 			include 'includes/header.php';
   		?>
 </head>
@@ -52,6 +54,7 @@ require_once('functions/functions.php');
     	<ul class="breadcrumbs">
         	<li><a href="?ref=home">Home</a></li>
             <li><a href="shop.php">Shop</a></li>
+            <li><a href="shop.php?ref=<?php echo strtolower(str_replace(" ", "-", $category)) ?>"><?php echo $category ?></a></li>
             <li class="current"><a href="shop-item.php?pid=<?php echo $pid; ?>"><?php echo $pageTitle; ?></a></li>
         </ul>
     </div>

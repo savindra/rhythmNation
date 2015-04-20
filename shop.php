@@ -1,7 +1,4 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
-	session_start(); 
-}
 require_once('functions/functions.php');
 ?>
 
@@ -85,7 +82,7 @@ require_once('functions/functions.php');
               }
 		?>
       </div>
-      <div class="content <?php if($category == "drumsets"){echo "active";}?>" id="panel21">
+      <div class="content <?php if($category == "drum-sets"){echo "active";}?>" id="panel21">
         
         <?php
 			require_once('functions/db_connect.php');
