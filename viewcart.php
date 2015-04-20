@@ -1,4 +1,7 @@
 <?php
+if(session_status() == PHP_SESSION_NONE){
+	session_start(); 
+}
 require_once('functions/functions.php');
 ?>
 
@@ -77,10 +80,17 @@ require_once('functions/functions.php');
 			echo '</table>';
 			echo '<a href="functions/cart_update.php?emptycart=1&return_url='.$current_url.'">Empty Cart</a>';
 			
-			echo '<form action="functions/checkout.php" method="post">';
+			
+			
+			
+			
+			
+			
+			
+			echo '<form action="" method="post">';
 				echo '<div class="large-12 text-right">';
-				echo '<input type="submit" name="continue-shopping" value="Continue Shopping" class="small button radius">&nbsp;';
-				echo '<input type="submit" name="checkout-submit" value="Checkout" class="small button radius">';
+				echo '<input type="submit"  name="continue-shopping" value="Continue Shopping" class="small button radius">&nbsp;';
+				echo '<input type="submit" data-reveal-id="firstModal" name="checkout-submit" value="Checkout" class="small button radius">';
 				echo '</div>';
 			echo '</form>';
 			
@@ -94,6 +104,116 @@ require_once('functions/functions.php');
 	?>
     
     
+    <?php
+		if(isset($_POST['continue-shopping'])){
+			header("location: shop.php");
+		}
+		
+		if(isset($_SESSION['login_user']) && isset($_SESSION['products']) && isset($_POST['checkout-submit'])){
+			
+			$loginuser = $_SESSION['login_user'];
+			$resultitle = "";
+			$result = "";
+			
+			$result = $dbc->query("SELECT * FROM customer WHERE username='$loginuser'");
+			$obj = $result->fetch_object();
+
+			$customer_id = $obj->customer_id;
+			$address_id = $obj->address_id;
+			
+			
+			$query = "SELECT payment_id FROM payment WHERE customer_id='$customer_id'";
+			$response = @mysqli_query($dbc, $query);
+			if(mysqli_num_rows($response)){
+				
+				if($response){
+					while($row = mysqli_fetch_array($response)){
+						$payment_id = $row['payment_id'];
+					}
+				}
+				
+				$validateQty = true;
+				$invalidProduct = "";
+				
+				foreach($_SESSION['products'] as $cart_itm){
+				
+					$pid = $cart_itm['pid'];
+					$qty = $cart_itm['qty'];
+					
+					$result = $dbc->query("SELECT quantity, model FROM product WHERE product_id='$pid'");
+					$obj = $result->fetch_object();
+					
+					if($qty > $obj->quantity){
+						$validateQty = false;
+						$invalidProduct += $obj->model . ", ";
+					}
+				}
+				
+				if($validateQty == true){
+					$result = $dbc->query("SELECT * FROM address INNER JOIN country ON address.country_id=country.country_id WHERE address_id='$address_id'");
+					$obj = $result->fetch_object();
+					
+					$order_status = 1;
+					$ship_firstname = $obj->firstname;
+					$ship_lastname = $obj->lastname;
+					$ship_company = $obj->company;
+					$ship_address1 = $obj->address1;
+					$ship_address2 = $obj->address2;
+					$ship_city = $obj->city;
+					$ship_postcode = $obj->postcode;
+					$ship_country = $obj->name;
+					
+					date_default_timezone_set('Asia/Kolkata');
+					$date_added = date('Y-m-d H:i:s');
+					
+					$query = "INSERT INTO orders VALUES(NULL, '$customer_id', '$payment_id', '$order_status', '$ship_firstname', '$ship_lastname', '$ship_company', '$ship_address1', '$ship_address2', '$ship_city', '$ship_postcode', '$ship_country', '$date_added', '$total')";
+					
+					$dbc->query($query);
+					
+					$result = $dbc->query("SELECT order_id FROM orders ORDER BY order_id DESC LIMIT 1;");
+					$obj = $result->fetch_object();
+					$order_id = $obj->order_id;
+					
+					foreach($_SESSION['products'] as $cart_itm){
+						
+						$pid = $cart_itm['pid'];
+						$qty = $cart_itm['qty'];
+						$result = $dbc->query("SELECT model FROM product WHERE product_id='$pid'");
+						$obj = $result->fetch_object();
+						$model = $obj->model;
+						
+						$query = "UPDATE product SET quantity=quantity - '$qty' WHERE product_id='$pid'";
+						$dbc->query($query);
+						
+						$query = "INSERT INTO order_product VALUES(NULL, '$order_id', '$pid', '$model', '$qty')";
+						$dbc->query($query);
+						
+						unset($_SESSION['products']);
+						$resultitle = "Order Success.";
+						$result = "Order Completed.";
+					}
+					$resultitle = "Order Failed.";
+					$result = "Invalid quantity for ".$invalidProduct;
+				}
+				
+				
+			} else {
+				$resultitle = "Order Failed.";
+				$result = "Please add payment details to your account before proceeding.";	
+			}
+			//header("location: viewcart.php");
+			echo '<p>'.$result.'</p>';
+		}
+		
+		if(!isset($_SESSION['login_user']) && isset($_SESSION['products']) && isset($_POST['checkout-submit'])){
+			header("location: login-register.php");
+		}
+		
+		if(isset($_SESSION['login_user']) && !isset($_SESSION['products']) && isset($_POST['checkout-submit'])){
+			header("location: viewcart.php");
+		}
+		
+	?>
     
     </div>
 

@@ -1,7 +1,6 @@
 <?php
-require_once('functions/db_connect.php');
-
 session_start();
+require_once('functions/db_connect.php');
 
 $user_check = $_SESSION['login_user'];
 

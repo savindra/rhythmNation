@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['continue-shopping'])){
-	header("location: ../shop.php");
+	//header("location: ../shop.php");
 }
 
 if(isset($_POST['checkout-submit'])){

@@ -10,6 +10,14 @@ require_once('functions/functions.php');
 			$pageTitle = "Contact Us";
 			include 'includes/header.php';
   		?>
+        
+        <script>
+			function contactClear(){
+				document.getElementById('name').value = "";
+				document.getElementById('email').value = "";
+				document.getElementById('message').value = "";
+			}
+		</script>
 </head>
  
 <body>   
@@ -38,27 +46,53 @@ require_once('functions/functions.php');
         <br>
         <h5><b>Contact Us</b></h5>
         
-        <form>
+        <?php
+			$message="";
+			if(isset($_POST['contact-submit'])){
+				
+				$name = test_input($_POST['name']);
+				$email = test_input($_POST['email']);
+				$message = test_input($_POST['message']);
+				
+				$formcontent = "From: '$name' \n\nMessage: '$message'";
+				$recipient = "cybernerd93@gmail.com";
+				$subject = "RhythmNation - Contact Form";
+				$mailheader = "From: $email \r\n";
+				
+				mail($recipient, $subject, $formcontent, $mailheader) or die("Error!"); 
+				$message = "Thank you for the message, We will contact you soon.";
+			}
+		
+			function test_input($data) {
+			  $data = trim($data);
+			  $data = stripslashes($data);
+			  $data = htmlspecialchars($data);
+			  return $data;
+			}
+		?>
+        
+        <form action="" method="post">
           <div class="row">
             <div class="large-12 columns">
               <label>Name (required)
-                <input type="text" placeholder="Your Name" />
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
               </label>
               
               <label>Email (required)
-                <input type="email" placeholder="Your Email" />
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
               </label>
               
               <label>Message (required)
-        		<textarea placeholder="Message here"></textarea>
+        		<textarea id="message" name="message" placeholder="Message here" required></textarea>
               </label>
               
-              <input type="submit" value="Submit" class="small button radius" />
-              <a href="#" class="small button radius">Clear</a>
-              
+              <input type="submit" name="contact-submit" value="Submit" class="small button radius" />
+              <input onClick="contactClear()" type="button" name="contact-clear" value="Clear" class="small button radius" />
+              <p><strong><?php echo $message ?></strong></p>
             </div>
           </div>
         </form>
+        
     
     </div>
     

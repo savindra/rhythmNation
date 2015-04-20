@@ -11,6 +11,55 @@ require_once('functions/functions.php');
 			$pageTitle = "My Account";
 			include 'includes/header.php';
   		?>
+        <script>
+			function showOrder() {
+				var str = document.getElementById("order-id").value;
+				var id = document.getElementById("customer-id").value;
+				if (str == "") {
+					document.getElementById("order-id").innerHTML = "";
+					return;
+				} else { 
+					if (window.XMLHttpRequest) {
+						// code for IE7+, Firefox, Chrome, Opera, Safari
+						xmlhttp = new XMLHttpRequest();
+					} else {
+						// code for IE6, IE5
+						xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					xmlhttp.onreadystatechange = function() {
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							document.getElementById("result").innerHTML = xmlhttp.responseText;
+						}
+					}
+					xmlhttp.open("GET","functions/getorder.php?q="+str+"&id="+id,true);
+					xmlhttp.send();
+				}
+			}
+			
+			function showOrderAll() {
+				var id = document.getElementById("customer-id").value;
+				if (id == "") {
+					document.getElementById("customer-id").innerHTML = "";
+					return;
+				} else { 
+					if (window.XMLHttpRequest) {
+						// code for IE7+, Firefox, Chrome, Opera, Safari
+						xmlhttp = new XMLHttpRequest();
+					} else {
+						// code for IE6, IE5
+						xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					xmlhttp.onreadystatechange = function() {
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							document.getElementById("result").innerHTML = xmlhttp.responseText;
+						}
+					}
+					xmlhttp.open("GET","functions/getorder.php?id="+id,true);
+					xmlhttp.send();
+				}
+			}
+		
+		</script>
 </head>
  
 <body>   
@@ -202,30 +251,32 @@ require_once('functions/functions.php');
             </div>
           </div>
           <div class="content" id="panel31">
-            <div class="large-3">
+            <div class="row large-8 columns">
             
             <?php
-			
 				if(isset($_POST['order-submit'])){
-					
 					$order_id = test_input($_POST['order-id']);
-					
-					
-					
 				}
-			
 			?>
-              <form>
+              <form action="" onClick="showOrder()" type="get">
                 <label>Order ID
-                  <input type="number" name="order-id" required>
+                  <input type="number" id ="order-id" name="order-id" required>
+                  <input type="hidden" id="customer-id" value="<?php echo $customer_id; ?>">
                 </label>
-                <label>
-                    <input type="submit" name="order-submit" value="Search" class="small button radius">
-                    <a href="#">View All</a>
-                </label>
+                	<div class="large-9 columns">
+                    	<input type="button" name="order-submit" value="Search" class="small button radius">
+                    </div>
+              </form>
+              <form action="" onClick="showOrderAll()" type="get">
+              	<input type="hidden" id="customer-id" value="<?php echo $customer_id; ?>">
+                <div class="large-1 columns">
+              		<input type="button" name="order-submit" value="View All" class="small button radius">
+                </div>
               </form>
             </div>
+            <div id="result" class="large-12 columns"></div>
           </div>
+          
         </div>
     </div>
 </div>
