@@ -1,6 +1,8 @@
 <?php
 session_set_cookie_params(3600,"/");
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+	session_start(); 
+}
 $error = '';
 
 if(isset($_POST['login-submit'])){
