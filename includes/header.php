@@ -125,6 +125,11 @@ min-height: 400px; }
 	background-color:#09F;
 	color:#FFF;}
 
+.home-panel{
+	background-color:#333;
+	color:#FFF;
+}
+
 </style>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/slippry.min.js"></script>

@@ -100,7 +100,7 @@ require_once('functions/functions.php');
 		}
 		
 		if(isset($_SESSION['login_user']) && isset($_SESSION['products']) && isset($_POST['checkout-submit'])){
-			
+			$_SESSION['background'] = "";
 			$loginuser = $_SESSION['login_user'];
 			
 			$result = $dbc->query("SELECT * FROM customer WHERE username='$loginuser'");
@@ -180,6 +180,14 @@ require_once('functions/functions.php');
 						
 						$_SESSION['attempt_checkout'] = "success";
 						$_SESSION['order_id'] = $order_id;
+						
+						if($total >= 0 && $total <= 100){
+							$_SESSION['background'] = "#FFFF66";
+						} else if ($total > 100 && $total <= 500){
+							$_SESSION['background'] = "#FF9966";
+						} else {
+							$_SESSION['background'] = "#FF6666";
+						}
 						header("location: checkout.php");
 					}
 				} else {

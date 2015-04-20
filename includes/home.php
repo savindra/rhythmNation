@@ -14,10 +14,30 @@
      </div>
 </div>
 <div class="row">
-  <hr >
   <div class="large-12 columns">
-  	<h1 class="text-center"><b>WELCOME TO <span style="background-color:#09F;color:#FFF;">RHYTHMNATION</span></b></h1>
-    <h1 class="text-center"><b>CHECK OUR MUSICAL INSTRUMENT STORE</b></h1>
-  <hr >
+  	<hr />
+      <h1 class="text-center"><b>WELCOME TO <span style="background-color:#09F;color:#FFF;"> RHYTHMNATION </span></b></h1>
+      <h1 class="text-center"><b>CHECK OUR MUSICAL INSTRUMENT STORE</b></h1>
+    <hr >
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-4 columns">
+  	<div class="panel radius home-panel">
+    	<p>Check Our Instruments</p>
+    </div>
+  </div>
+  
+  <div class="large-4 columns">
+  	<div class="panel radius home-panel">
+    	<h5>Check Our Instruments</h5>
+    </div>
+  </div>
+  
+  <div class="large-4 columns">
+  	<div class="panel radius home-panel">
+    	<h5>Check Our Instruments</h5>
+    </div>
   </div>
 </div>

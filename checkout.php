@@ -13,7 +13,7 @@ require_once('functions/functions.php');
         
 </head>
  
-<body>   
+<body style="background-color:<?php echo $_SESSION['background'];  unset($_SESSION['background']);?>">   
   <?php
 			include 'includes/menu.php';
   	?>
