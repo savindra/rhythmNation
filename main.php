@@ -35,6 +35,8 @@ require_once('functions/functions.php');
 			}
 			include 'includes/header.php';
   		?>
+        <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
     </head>
   
   <body>

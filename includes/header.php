@@ -125,11 +125,93 @@ min-height: 400px; }
 	background-color:#09F;
 	color:#FFF;}
 
-.home-panel{
+.home-panel-black {
 	background-color:#333;
 	color:#FFF;
 }
+.home-panel-black p, .home-panel-black h6{
+	color:#FFF;
+}
+.home-panel-blue {
+	background-color:#09F;
+	color:#FFF;
+}
+.home-panel-blue p, .home-panel-blue h6{
+	color:#FFF;
+}
+.instrument-icon{
+	background:url(img/icon/headPhoneIcon.png) no-repeat 0 0; background-size:1.4rem 1.4rem;padding-left: 2.0rem;padding-bottom:0.2rem;
+}
+.feedback-icon{
+	background:url(img/icon/feedbackIcon.png) no-repeat 0 0; background-size:1.4rem 1.4rem;padding-left: 2.0rem;padding-bottom:0.2rem;
+}
+.activities-icon{
+	background:url(img/icon/cdIcon.png) no-repeat 0 0; background-size:1.4rem 1.4rem;padding-left: 2.0rem;padding-bottom:0.2rem;
+}
 
+.cd-container {
+  width: 90%;
+  max-width: 768px;
+  margin: 2em auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(0, 153, 255, 0.8) url(img/icon/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #09F;
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 40px;
+    width: 40px;
+    right: 30px;
+    bottom: 30px;
+  }
+}
 </style>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/slippry.min.js"></script>
@@ -138,5 +220,14 @@ min-height: 400px; }
 			$(function(){
 				$('#slippry-demo').slippry()
 			});
+			$('.variable-width').slick({
+				dots: true,
+				infinite: true,
+				speed: 100,
+				slidesToShow: 2,
+				centerMode: true,
+				variableWidth: true,
+				autoplay: true
+      });
 		  });
 </script>
