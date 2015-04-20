@@ -82,7 +82,7 @@
                             
                             <li class="has-dropdown"><a href="#">Activity</a>
                 				<ul class="dropdown">
-                    				<li><a href="?ref=quiz">Take Quiz</a></li>
+                    				<li><a href="quiz.php">Take Quiz</a></li>
                                     <li><a href="?ref=poll">Weekly Poll</a></li>
                                     <li><a href="rate-us.php">Rate Us!</a></li>
                     			</ul>
