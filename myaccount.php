@@ -139,7 +139,7 @@ require_once('functions/functions.php');
 					?>
                     
                     </td>
-                    <td><a href="#">Edit</a></td>
+                    <td><a href="myaccount.php#panel41">Edit</a></td>
                 </tr>
             </table>
           </div>
