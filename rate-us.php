@@ -32,12 +32,13 @@ require_once('functions/functions.php');
 		$name = $email = $comment = $rating = $ratingResult = "";
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 		  
+		  //get user inputs from the form
 		  $name = test_input($_POST["name"]);
 		  $email = test_input($_POST["email"]);
 		  $comment = test_input($_POST["comment"]);
 		  $rating = test_input($_POST["rating"]);
 		  
-		  require_once('functions/db_connect.php');
+		  require_once('functions/db_connect.php'); //get database details
 		  
 		  $query = "INSERT INTO testimonal VALUES(NULL, ?, ?, ?, ?);";
 		  
@@ -45,15 +46,15 @@ require_once('functions/functions.php');
 		  
 		  mysqli_stmt_bind_param($stmt, "sssd", $email, $name, $comment, $rating);
 		  
-		  mysqli_stmt_execute($stmt);
+		  mysqli_stmt_execute($stmt);//exectute query
 		  
 		  $affected_rows = mysqli_stmt_affected_rows($stmt);
 		  
-		  if($affected_rows == 1){
+		  if($affected_rows == 1){//if number of rows affected is 1
 			  $ratingResult = "Your rating was recorded. Thank you!";
 			  mysqli_stmt_close($stmt);
 			  mysqli_close($dbc);
-		  } else {
+		  } else {//if number of rows affected is not 1
 			  $ratingResult = "Error Occurred!";
 			  mysqli_stmt_close($stmt);
 			  mysqli_close($dbc);

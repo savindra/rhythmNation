@@ -10,18 +10,18 @@ require_once('functions/functions.php');
 			$pid = "";
 			if( isset($_GET['pid']) ){
 				$ref = $_GET["pid"];
-				$pid = $ref;
+				$pid = $ref; //get the product id requested
 			} else {
-				header("location: shop.php");
+				header("location: shop.php"); //if product id is not set redirect
 			}
 			$current_url = base64_encode("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-			require_once('functions/db_connect.php');
+			require_once('functions/db_connect.php'); // get database details
 			
 			$query = "SELECT * FROM product WHERE product_id='$pid'";
 			
-			$response = @mysqli_query($dbc, $query);
+			$response = @mysqli_query($dbc, $query); //retrieve details of product from product id
 			
-			if($response){
+			if($response){ // if product found assing prduct details to variables
                   while($row = mysqli_fetch_array($response)){
                       $pageTitle = $row['model'];
 					  $category_id = $row['category_id'];
@@ -37,7 +37,7 @@ require_once('functions/functions.php');
 			 }
 			 $result = $dbc->query("SELECT category_desc FROM category WHERE category_id='$category_id'");
 			 $obj = $result->fetch_object();
-			 $category = $obj->category_desc; 
+			 $category = $obj->category_desc; //get the category name
 			 
 			include 'includes/header.php';
   		?>

@@ -32,16 +32,16 @@ require_once('functions/functions.php');
 
 <div class="row">
 
-	<div class="large-12 columns">
+	<div class="large-12 columns" style="height:500px">
     	<?php
-		
+			//if no payment details are set
 			if(isset($_SESSION['attempt_checkout']) && $_SESSION['attempt_checkout'] == "no_payment"){
 				
 				echo '<h3 class="text-center">Order Failed</h3>';
 				echo '<p class="text-center">Please add payment details to your account before checkout.</p>';
 				unset($_SESSION['attempt_checkout']);
 			}
-			
+			//if qty is greater than the stock
 			else if(isset($_SESSION['attempt_checkout']) && $_SESSION['attempt_checkout'] == "invalid_qty"){
 				
 				echo '<h3 class="text-center">Order Failed</h3>';
@@ -49,25 +49,20 @@ require_once('functions/functions.php');
 				unset($_SESSION['attempt_checkout']);
 				unset($_SESSION['invalid_products']);
 			}
-			
+			//if all conditions are satisfied 
 			else if(isset($_SESSION['attempt_checkout']) && $_SESSION['attempt_checkout'] == "success"){
 				
 				echo '<h3 class="text-center">Order Success</h3>';
 				echo '<p class="text-center">You order is completed. Thank you for shopping with us.
-				<br />Your order ID: '.$_SESSION['order_id'].'</p>';
+				<br />Your order ID: '.$_SESSION['order_id'].'</p>';//display products id
 				unset($_SESSION['attempt_checkout']);
-				unset($_SESSION['order_id']);
-				
+				unset($_SESSION['order_id']);	
 			}
-			
+			//invalid requests
 			else {
-				
-				header("location: viewcart.php");
-				
+				header("location: viewcart.php");	
 			}
-		
 		?>
-    
     </div>
 
 </div>

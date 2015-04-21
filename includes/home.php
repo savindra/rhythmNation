@@ -2,16 +2,16 @@
 	<div>
       <ul id="slippry-demo">
         <li>
-          <a href="#slide1"><img src="img/slider/0.gif" alt="Welcome to RhythmNation!"></a>
+          <a href="#"><img src="img/slider/0.gif" alt="Welcome to RhythmNation!"></a>
         </li>
         <li>
-          <a href="#slide2"><img src="img/slider/1.jpg" alt=""></a>
+          <a href="shop.php?ref=guitars"><img src="img/slider/1.jpg" alt=""></a>
         </li>
         <li>
-          <a href="#slide3"><img src="img/slider/2.jpg"  alt=""></a>
+          <a href="shop.php?ref=drum-sets"><img src="img/slider/2.jpg"  alt=""></a>
         </li>
         <li>
-          <a href="#slide4"><img src="img/slider/3.jpg" alt=""></a>
+          <a href="shop.php?ref=keyboards"><img src="img/slider/3.jpg" alt=""></a>
         </li>
       </ul>
      </div>

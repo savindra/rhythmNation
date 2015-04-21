@@ -85,7 +85,7 @@ require_once('functions/functions.php');
 				  //return;
 			  }
 			  
-			  document.getElementById("count").innerHTML = Math.round(count/60)-1 + ":" + count%60;
+			  document.getElementById("count").innerHTML = "<b>Time Remaining: </b>" + (Math.round(count/60)-1) + ":" + count%60;
 		  }
 	  </script>
 </head>

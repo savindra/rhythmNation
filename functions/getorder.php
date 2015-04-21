@@ -3,10 +3,10 @@ require_once('db_connect.php');
 
 if(isset($_GET['q']) && isset($_GET['id'])){
 	
-	$q = intval($_GET['q']);
-	$id = intval($_GET['id']);
+	$q = intval($_GET['q']);//get order id
+	$id = intval($_GET['id']);// get customer id
 	
-	$query = "SELECT o.order_id, o.date_added, o.total, os.name FROM orders o INNER JOIN order_status os ON o.order_status_id = os.order_status_id WHERE o.order_id='$q' AND o.customer_id='$id';";
+	$query = "SELECT o.order_id, o.date_added, o.total, os.name FROM orders o INNER JOIN order_status os ON o.order_status_id = os.order_status_id WHERE o.order_id='$q' AND o.customer_id='$id';";// query to select order details
 	
 	$response = @mysqli_query($dbc, $query);
 	$count = 0;
@@ -24,7 +24,7 @@ if(isset($_GET['q']) && isset($_GET['id'])){
 		  echo '<td>'.$row['order_id'].'</td>';
 		  echo '<td>'.$row['date_added'].'</td>';
 		  echo '<td>';
-			
+			//query to select invidual products of an order
 			$query2 = "SELECT model, quantity FROM order_product WHERE order_id='$q';";
 			$response2 = @mysqli_query($dbc, $query2); 
 			if($response){

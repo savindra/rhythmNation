@@ -7,7 +7,8 @@
                       <ul style="padding-top:10px;">
                           <li><a href="http://facebook.com/rhythmnation"><img src="img/icon/facebook-top-icon.png"/></a></li>
                           <li><a href="http://twitter.com/rhythmnation"><img src="img/icon/top-twitter-icon.png"/></a></li>
-                          <li><a href="http://vimeo.com/rhythmnation"><img src="img/icon/top-vimeo-icon.png"></a></li>                      </ul>
+                          <li><a href="http://vimeo.com/rhythmnation"><img src="img/icon/top-vimeo-icon.png"></a></li>
+                          <li><a href="https://plus.google.com/108972435167945072560"><img src="img/icon/google-plus-icon.png"></a></li>                      </ul>
                     </section>
                     
           			<section class="top-bar-section">
@@ -83,7 +84,7 @@
                             <li class="has-dropdown"><a href="#">Activity</a>
                 				<ul class="dropdown">
                     				<li><a href="quiz.php">Take Quiz</a></li>
-                                    <li><a href="?ref=poll">Weekly Poll</a></li>
+                                    <li><a href="weekly-poll.php">Weekly Poll</a></li>
                                     <li><a href="rate-us.php">Rate Us!</a></li>
                     			</ul>
                 			</li>

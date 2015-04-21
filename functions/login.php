@@ -14,16 +14,9 @@ if(isset($_POST['login-submit'])){
 		
 		require_once('functions/db_connect.php');
 		
-		$query = "SELECT * FROM customer WHERE username=? AND password=?;";
+		$query = "SELECT * FROM customer WHERE username='$username' AND password='$password';";
 		
-		$stmt = mysqli_prepare($dbc, $query);
-		
-		mysqli_stmt_bind_param($stmt, "ss", $username, $password);
-		
-		$r = mysqli_stmt_execute($stmt);
-		
-		if($r){
-			$result = mysqli_stmt_get_result($stmt);
+		if($result = @mysqli_query($dbc, $query)){
 			if (mysqli_num_rows($result) == 1) {
 				$_SESSION['login_user'] = $username;
 				header("location: myaccount.php");

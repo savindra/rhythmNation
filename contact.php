@@ -40,7 +40,7 @@ require_once('functions/functions.php');
 
 	<div class="large-9 columns">
     	<div class="panel callout radius">
-          <h4><b>Feel Free to Contact Us</b></h4>
+          <h5><b>Feel Free to Contact Us</b></h5>
           
           <div id="googleMap" style="width:auto;height:380px;"></div>
          

@@ -5,7 +5,8 @@
     
     	<div class="large-4 columns">
         	<br />
-        	<p style="color:#FFF"><b>Connect With Us</b></p>
+        	<p style="color:#FFF"><b>Image of the Day</b></p>
+            <img src="img/image-of-the-day.jpg"/>
         </div>
         
         <div class="large-4 columns" style="color:#FFF">

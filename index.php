@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- redirect to main web page after 5 seconds  -->
     <meta http-equiv="refresh" content="5;url=main.php?ref=home" />
-    
+    <!-- counter  -->
     <script>
 	var count = 5;
 	var counter = setInterval(timer, 1000);
@@ -21,6 +22,7 @@
 			//return;
 		}
 		document.getElementById("count").innerHTML = count;
+		/* display the time count in the body */
 	}
 	</script>
   </head>
@@ -29,7 +31,7 @@
     <div class="off-canvas-wrap" style="background-color:#CCC">
       <div class="row">
       	<div class="large-12 columns">
-        	<h3>Welcome to RhythmNation</h3>
+        	<h3 class="text-center">Welcome to RhythmNation!</h3>
         </div>
       </div>
     </div>
@@ -52,20 +54,20 @@
                           <th><h5>Student No</h5></th>
                       </tr>
                       <tr>
-                          <td><h6>Savindra Perera</h6></td>
-                          <td><h6>2013042</h6></td>
+                          <td><h6>Oshada Sathsara</h6></td>
+                          <td><h6>2013195</h6></td>
                       </tr>
                       <tr>
                           <td><h6>Pumudu Perera</h6></td>
                           <td><h6>2013086</h6></td>
                       </tr>
                       <tr>
-                          <td><h6>Yesin Singhawansa</h6></td>
-                          <td><h6>2013120</h6></td>
+                          <td><h6>Savindra Perera</h6></td>
+                          <td><h6>2013042</h6></td>
                       </tr>
                       <tr>
-                          <td><h6>Oshada</h6></td>
-                          <td><h6>20130xx</h6></td>
+                          <td><h6>Yesin Singhawansa</h6></td>
+                          <td><h6>2013120</h6></td>
                       </tr>
                   </table>
             </div>

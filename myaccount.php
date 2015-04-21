@@ -82,6 +82,7 @@ require_once('functions/functions.php');
           <li class="tab-title active"><a href="#panel11">Personal Information</a></li>
           <li class="tab-title"><a href="#panel21">Payment Information</a></li>
           <li class="tab-title"><a href="#panel31">Track Item</a></li>
+          <li class="tab-title"><a href="#panel41">Edit Details</a></li>
         </ul>
         <div class="tabs-content">
           <div class="content active" id="panel11">
@@ -250,8 +251,9 @@ require_once('functions/functions.php');
                 </div>
             </div>
           </div>
+          
           <div class="content" id="panel31">
-            <div class="row large-8 columns">
+            <div class="row large-12 columns">
             
             <?php
 				if(isset($_POST['order-submit'])){
@@ -275,6 +277,135 @@ require_once('functions/functions.php');
               </form>
             </div>
             <div id="result" class="large-12 columns"></div>
+          </div>
+          
+          <div class="content" id="panel41">
+            <div class="row">
+            
+            	<div class="large-12 columns">
+                
+                <!-- Change Password -->
+                <?php
+					$message1 = "";
+					if(isset($_POST['password-change-submit'])){
+
+						$username = $_SESSION['login_user'];
+						$password = test_input($_POST['current-password']);
+						$newpassword = test_input($_POST['new-password']);
+						
+						$query = "SELECT customer_id FROM customer WHERE username='$username' AND password='$password'";
+						$response = @mysqli_query($dbc, $query);
+						
+						if(mysqli_num_rows($response)){
+							$query = "UPDATE customer SET password='$newpassword' WHERE username='$username'";
+							$dbc->query($query);
+							$message1 = "Your password has been changed.";
+						} else {
+							$message1 = "Your password is wrong.";
+						}
+					}
+				
+				?>
+                <!-- Change Password -->
+                
+                <!-- Change Address -->
+                <?php
+					$message2 = "";
+					if(isset($_POST['address-change-submit'])){
+						
+						$username = $_SESSION['login_user'];
+						$firstname = test_input($_POST['address-firstname']);
+						$lastname = test_input($_POST['address-lastname']);
+						$company = test_input($_POST['address-company']);
+						$address1 = test_input($_POST['address1']);
+						$address2 = test_input($_POST['address2']);
+						$city = test_input($_POST['city']);
+						$country_id = test_input($_POST['country']);
+						$postcode = test_input($_POST['postcode']);
+						
+						$result = $dbc->query("SELECT address_id FROM customer WHERE username='$username'");
+						$obj = $result->fetch_object();
+						$address_id = $obj->address_id;
+						
+						$query = "UPDATE address SET firstname='$firstname', lastname='$lastname', company='$company', address1='$address1', address2='$address2', city='$city', country_id='$country_id', postcode='$postcode' WHERE address_id='$address_id'";
+						$dbc->query($query);
+						$message2 = "Your address details changed.";
+					}
+				?>
+                <!-- Change Address -->
+                
+                    <form action="" method="post">
+                    	<div class="large-4 columns">
+                        	<h5>Change Password</h5>
+                          <div class="panel">
+                              <label>Password
+                                  <input type="password" name="current-password" required>
+                              </label>
+                              <label>New Password
+                                  <input type="password" name="new-password" required>
+                              </label>
+                              <label>Confirm Password
+                                  <input type="password" name="confirm-new-password" required>
+                              </label>
+                              <input type="submit" name="password-change-submit" class="small radius button">
+                              <p><?php echo $message1; ?></p>
+                          </div>
+                        </div>
+                     </form>
+                     
+                     
+                     <form action="" method="post">   
+                        <div class="large-7 columns">
+                        	<h5>Change Address</h5>
+                          <div class="panel">
+                              <label>Firstname
+                                  <input type="text" name="address-firstname" required>
+                              </label>
+                              <label>Lastname
+                                  <input type="text" name="address-lastname" required>
+                              </label>
+                              <label>Company
+                                  <input type="text" name="address-company" required>
+                              </label>
+                              <label>Address 1
+                                  <input type="text" name="address1" required>
+                              </label>
+                              <label>Address 2
+                                  <input type="text" name="address2" required>
+                              </label>
+                              <label>City
+                                  <input type="text" name="city" required>
+                              </label>
+                              <label>Country
+                              <select name="country">
+                                  <?php
+                                      require_once('functions/db_connect.php');
+                                      $query = "SELECT * FROM country";
+                                      $response = @mysqli_query($dbc, $query);
+                                      
+                                      if($response){
+                                          while($row = mysqli_fetch_array($response)){
+                                              echo '<option value="' . $row['country_id'] . '">' . $row['name'] . '</option>';
+                                          }
+                                      } else {
+                                          echo "Couldn't issue database query";
+                                          echo mysqli_error($dbc);
+                                          
+                                      }
+                                  ?>
+                              </select>
+                            </label>
+                            <label>Postcode
+                                  <input type="number" name="postcode" required>
+                              </label>
+                            <input type="submit" name="address-change-submit" class="small radius button">
+                            <p><?php echo $message2; ?></p>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
           </div>
           
         </div>
